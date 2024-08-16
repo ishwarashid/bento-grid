@@ -1,0 +1,206 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141414;
+    color: #FBFBFB;
+}
+
+header {
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    position: relative;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu-icon {
+    margin: 0;
+    cursor: pointer;
+}
+header nav ul a{
+    text-decoration: none;
+    color: inherit;
+}
+
+header nav ul a:hover{
+    border-bottom: 2px solid #FBFBFB;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, 200px);
+    padding: 20px;
+    gap: 15px;
+}
+
+.wrapper > div {
+    padding: 20px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrapper > div img{
+    width: 48px;
+
+}
+
+.wrapper > div p, .wrapper > div h3{
+    margin: 0;
+
+}
+
+.twitter {
+    background: linear-gradient(to right, #4EBCFF, #1199ED);
+    grid-column: span 2;
+}
+
+.linkedin {
+    background: linear-gradient(to right, #3D77C7, #195AB5);
+}
+
+.figma {
+    background-color: rgb(100, 100, 100, 0.3);
+    grid-row: span 2;
+}
+
+.pinterest {
+    background: linear-gradient(to right, #FF1539, #D40020);
+}
+
+.medium {
+    color: #141414;
+    background: linear-gradient(to right, #FBFBFC, #DBDBDB);
+}
+
+.youtube {
+    background: linear-gradient(to right, #F03B3E, #CF0000);
+}
+
+.insta {
+    background: radial-gradient(circle at 30% 30%,
+    #f09433 0%, 
+    #e6683c 25%, 
+    #dc2743 50%, 
+    #cc2366 75%, 
+    #bc1888 100%);
+    grid-column: span 2;
+}
+
+.reddit {
+    background: linear-gradient(to right, #FF6921, #F84A09);
+
+}
+
+.discord {
+    background: linear-gradient(to right, #6F7AFC, #4554EE);
+}
+
+aside {
+    display: none;
+    position: absolute;
+    top: -15px;
+    left: 0;
+}
+aside ul {
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: inline-flex;
+    flex-direction: column;
+    list-style: none;
+    height: 100vh;
+    width: 20%;
+    min-width: 300px;
+    gap: 20px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.close-btn:hover {
+    color: #bc1888;
+}
+
+aside ul a {
+    text-decoration: none;
+    color: inherit;
+}
+
+aside ul li{
+    padding: 10px 20px;
+}
+
+aside ul li:not(:first-child):hover{
+    color: #141414;
+    background-color: rgba(255, 255, 255, 0.8);  
+}
+
+footer {
+    text-align: center;
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+@media (min-width: 768px) { 
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, 200px);
+    }
+
+    .twitter {
+        grid-column: span 2;
+        order: 1;
+    }
+    
+    .linkedin {
+        order: 2;
+    }
+    
+    .figma {
+        grid-row: span 2;
+        order: 5;
+    
+    }
+    
+    .pinterest {
+        order: 3;
+    }
+    
+    .insta {
+        grid-column: span 2;
+        order: 4;
+
+    }
+    
+    .reddit {
+        order: 6;
+    }
+    
+    .discord {
+        order: 7;
+    }
+
+    .medium {
+        order: 7;
+    }
+
+    .youtube {
+        order: 9;
+    }
+    
+}
