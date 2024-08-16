@@ -40,7 +40,7 @@ header nav ul a:hover {
 .wrapper {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(100px, 200px);
+    grid-auto-rows: minmax(75px, 150px);
     padding: 20px 5px;
     gap: 5px;
 }
