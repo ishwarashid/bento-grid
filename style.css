@@ -55,7 +55,7 @@ header nav ul a:hover {
 }
 
 .wrapper>div img {
-    width: 48px;
+    width: 24px;
 }
 
 .wrapper p {
@@ -181,6 +181,10 @@ footer {
 
     .wrapper>div {
         padding: 30px;
+    }
+
+    .wrapper>div img {
+        width: 48px;
     }
 
     .wrapper p {
