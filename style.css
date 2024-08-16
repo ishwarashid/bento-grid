@@ -1,11 +1,10 @@
-
 * {
     box-sizing: border-box;
 }
 
 body {
     background-color: #141414;
-    color: #FBFBFB;
+    color: #fbfbfb;
 }
 
 header {
@@ -13,6 +12,7 @@ header {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     position: relative;
+    margin: 0 5px;
 }
 
 header nav ul {
@@ -27,48 +27,53 @@ header nav ul {
     margin: 0;
     cursor: pointer;
 }
-header nav ul a{
+
+header nav ul a {
     text-decoration: none;
     color: inherit;
 }
 
-header nav ul a:hover{
-    border-bottom: 2px solid #FBFBFB;
+header nav ul a:hover {
+    border-bottom: 2px solid #fbfbfb;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: minmax(100px, 200px);
-    padding: 20px;
-    gap: 15px;
+    padding: 20px 5px;
+    gap: 5px;
 }
 
-.wrapper > div {
-    padding: 20px;
+.wrapper>div {
+    padding: 20px 10px;
+    padding-right: 0;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.wrapper > div img{
+.wrapper>div img {
     width: 48px;
-
 }
 
-.wrapper > div p, .wrapper > div h3{
-    margin: 0;
+.wrapper p {
+    font-size: 0.7rem;
+}
 
+.wrapper>div p,
+.wrapper>div h3 {
+    margin: 0;
 }
 
 .twitter {
-    background: linear-gradient(to right, #4EBCFF, #1199ED);
+    background: linear-gradient(to right, #4ebcff, #1199ed);
     grid-column: span 2;
 }
 
 .linkedin {
-    background: linear-gradient(to right, #3D77C7, #195AB5);
+    background: linear-gradient(to right, #3d77c7, #195ab5);
 }
 
 .figma {
@@ -77,35 +82,34 @@ header nav ul a:hover{
 }
 
 .pinterest {
-    background: linear-gradient(to right, #FF1539, #D40020);
+    background: linear-gradient(to right, #ff1539, #d40020);
 }
 
 .medium {
     color: #141414;
-    background: linear-gradient(to right, #FBFBFC, #DBDBDB);
+    background: linear-gradient(to right, #fbfbfc, #dbdbdb);
 }
 
 .youtube {
-    background: linear-gradient(to right, #F03B3E, #CF0000);
+    background: linear-gradient(to right, #f03b3e, #cf0000);
 }
 
 .insta {
     background: radial-gradient(circle at 30% 30%,
-    #f09433 0%, 
-    #e6683c 25%, 
-    #dc2743 50%, 
-    #cc2366 75%, 
-    #bc1888 100%);
+            #f09433 0%,
+            #e6683c 25%,
+            #dc2743 50%,
+            #cc2366 75%,
+            #bc1888 100%);
     grid-column: span 2;
 }
 
 .reddit {
-    background: linear-gradient(to right, #FF6921, #F84A09);
-
+    background: linear-gradient(to right, #ff6921, #f84a09);
 }
 
 .discord {
-    background: linear-gradient(to right, #6F7AFC, #4554EE);
+    background: linear-gradient(to right, #6f7afc, #4554ee);
 }
 
 aside {
@@ -114,6 +118,7 @@ aside {
     top: -15px;
     left: 0;
 }
+
 aside ul {
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.8);
@@ -140,57 +145,75 @@ aside ul a {
     color: inherit;
 }
 
-aside ul li{
+aside ul li {
     padding: 10px 20px;
 }
 
-aside ul li:not(:first-child):hover{
+aside ul li:not(:first-child):hover {
     color: #141414;
-    background-color: rgba(255, 255, 255, 0.8);  
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 footer {
+    margin: 0 5px;
     text-align: center;
     padding: 5px 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+    body {
+        min-height: 100vh;
+    }
+
+    header,
+    footer {
+        margin: 0 20px;
+    }
+
     .wrapper {
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, 200px);
+        gap: 15px;
+        padding: 20px;
+        grid-auto-rows: minmax(200px, 300px);
+    }
+
+    .wrapper>div {
+        padding: 30px;
+    }
+
+    .wrapper p {
+        font-size: 1rem;
     }
 
     .twitter {
         grid-column: span 2;
         order: 1;
     }
-    
+
     .linkedin {
         order: 2;
     }
-    
+
     .figma {
         grid-row: span 2;
         order: 5;
-    
     }
-    
+
     .pinterest {
         order: 3;
     }
-    
+
     .insta {
         grid-column: span 2;
         order: 4;
-
     }
-    
+
     .reddit {
         order: 6;
     }
-    
+
     .discord {
         order: 7;
     }
@@ -202,5 +225,4 @@ footer {
     .youtube {
         order: 9;
     }
-    
 }
